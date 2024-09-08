@@ -3,7 +3,7 @@ function elb() {
 }
 
 (function() {
-    var endpointUrl = 'http://httpbin.org/anything';
+    var endpointUrl = 'https://httpbin.org/anything';
     elb("walker destination", { push: 
         function (event) {
         var xhr = new XMLHttpRequest();
