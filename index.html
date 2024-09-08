@@ -1,8 +1,8 @@
 <!doctype html><html lang="de">
 <head>
-<title>DEMO: walker.js</title>
+<title>DEMO / Testseite: walker.js</title>
 <script id="elbloader" async class="elbwalker" src="walker.js" data-version="2"></script>
-<script defer src="walkerstart.js?v=5"></script>
+<script defer src="walkerstart-demo.js?v=1"></script>
 <style>
     body {font-family:arial;color:#fff;line-height:1.4em;background:#222;text-align:center}
     #cnt {position: relative; max-width:1000px; margin: 10px auto; text-align:left; padding:1em}
@@ -18,14 +18,12 @@
 <div data-elbglobals="language:de"></div>
 <div data-elbcontext="some_property:42">
     
-<h1>Testseite f&uuml;r walker.js (Custom Endpoint)</h1>
-<p>Hier wird eine lokale Fassung von walker.js geladen und im Code als Destination ein eigener Endpunkt und 
-die Console definiert (<a href="minimal.html">hier</a> geht es zu einer einer einfachen Version mit Default Verhalten). 
-Der Endpunkt bekommt das komplette Event als JSON Payload gesendet, wie es auch im elbLayer zu finden ist. 
-Dort kann dann eine Speicherung in einem lokalen Log, Parsing in Standardevents des server-side Google Tag Managers 
-in Form eines eigenen Clients, das Versenken des Events in einer eigenen Datenbank o. Ä. passieren. </p>
+<h1>Testseite f&uuml;r walker.js (Demo mit httpbin-Requests)</h1>
+<p>Hier wird eine lokale Fassung von walker.js geladen und im Code als Destination httpbin.org/anything und 
+die Console definiert. Der Endpunkt bekommt das komplette Event als JSON Payload gesendet, wie es auch im elbLayer zu finden ist. 
+Empfangene Daten werden von diesem Demo-Endpunkt wieder zurück gesendet und können in im Netzwerk-Tab kontrolliert werden.</p>
 
-<p>Weitere Hinweise zur Verwendung von walker.js siehe <a href="https://docs.elbwalker.com/tagging/basics">https://docs.elbwalker.com/tagging/basics</a>.</p>
+<p>Weitere Hinweise zur Verwendung von walker.js siehe <a href="https://docs.elbwalker.com/">https://docs.elbwalker.com/</a>.</p>
 <p id="infotxt">Seitenaufruf wurde gesendet und ist raus. Siehe Console.</p>
 
 <h2>Testlinks</h2>
@@ -33,7 +31,6 @@ in Form eines eigenen Clients, das Versenken des Events in einer eigenen Datenba
 <li>Link mit Event via Attribut: <a data-elb="helloworld" data-elbaction="click" href="#">Hallo Welt</a></li>
 <li>Link mit virtuellem Pageview per JavaScript: <a href="#" onclick="elb('page view', { id: '/test/virtual/path1', title: 'Virtuelle Seite 1'}, 'click', {some_property: 13} );">Virtueller Seitenaufruf</a></li> 
 <!-- FORMAT: elb('entity action', data, trigger, nested, context); -->
-<li>Interne Navigation: <a href="seite2.html">Zu einer weiteren Testseite</a></li>
 </ul>
 
 <p style="margin-bottom:100%">Hier ist nur etwas Text als Abstandhalter. Abwärts scrollen, um ein Element einzublenden, dessen Sichtbarkeit per Attribut vermessen wird...</p>
